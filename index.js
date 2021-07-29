@@ -276,6 +276,7 @@ app.get('/materials/:id', (req,res) => {
     })
 })
 
-app.listen((process.env.PORT || 5000), () => {
-    console.log("Serveur à l'écoute")
+var server = app.listen((process.env.PORT || 5000), () => {
+    var port = server.address().port
+    console.log("Server listening at http://localhost:%s", port)
   })
